@@ -4,7 +4,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function App() {
   return (
-    <div className="App flex flex-col">
+    <div className="App flex flex-col bg-zinc-800">
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />

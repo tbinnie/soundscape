@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+body {
+  background-color: black;
+}
+
 .text-shadow {
   text-shadow: 3px 3px 6px black;
 }

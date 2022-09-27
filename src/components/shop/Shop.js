@@ -7,7 +7,7 @@ const Shop = () => {
   return (
     <section className="bg-zinc-800 bg-center bg-cover h-full flex flex-col">
       <Navbar />
-      <div className="flex">
+      <div className="flex flex-col lg:flex-row">
         <Sidebar />
         <ShopGrid />
       </div>

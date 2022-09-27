@@ -1,19 +1,21 @@
-import React from "react";
+import { useState, useEffect, React } from "react";
 import Item from "./Item";
 
 const ShopGrid = () => {
+  const [items, setItems] = useState([]);
+
+  useEffect(() => {
+    fetch("items.json")
+      .then((response) => response.json())
+      .then((data) => setItems(data.items));
+  }, []);
+
   return (
-    <section className="p-12 flex justify-center items-center w-[90%]">
-      <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 justify-center items-center gap-40 p-8">
-        <Item name="Zoom F6" price={499.99} />
-        <div className="h-56 w-56 border-white border-4">1</div>
-        <div className="h-56 w-56 border-white border-4">1</div>
-        <div className="h-56 w-56 border-white border-4">1</div>
-        <div className="h-56 w-56 border-white border-4">1</div>
-        <div className="h-56 w-56 border-white border-4">1</div>
-        <div className="h-56 w-56 border-white border-4">1</div>
-        <div className="h-56 w-56 border-white border-4">1</div>
-        <div className="h-56 w-56 border-white border-4">1</div>
+    <section className="lg:p-12 flex justify-center items-center lg:w-[90%]">
+      <div className="grid grid-cols-1 lg:grid-cols-3 justify-center items-center gap-16 lg:gap-40 lg:p-8">
+        {items.map((item) => (
+          <Item name={item.name} price={item.price} key={item.id} />
+        ))}
       </div>
     </section>
   );

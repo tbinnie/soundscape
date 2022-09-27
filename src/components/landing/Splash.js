@@ -5,7 +5,7 @@ const Splash = () => {
   return (
     <section className="h-full flex justify-center items-center">
       <div className="splash__wrapper flex flex-col justify-center items-center rounded-xl  pb-16 gap-10">
-        <h1 className="text-7xl text-emerald-300 font-bold text-shadow">
+        <h1 className="text-6xl p-2 lg:p-0 lg:text-7xl text-emerald-300 font-bold text-shadow">
           THE CLEAREST SOUND, NATURALLY.
         </h1>
         <a href="/shop">
