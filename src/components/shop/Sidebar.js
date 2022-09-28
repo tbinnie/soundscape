@@ -12,9 +12,9 @@ const Sidebar = () => {
             <h2 className="text-4xl">{filter}</h2>
         </div>
         <div className="flex lg:flex-col gap-4">
-            <h2 className="text-4xl">Zoom</h2>
-            <h2 className="text-4xl">Sony</h2>
-            <h2 className="text-4xl">Tascam</h2>
+            <h2 className="text-4xl hover:cursor-pointer hover:text-emerald-400 hover:scale-110" onClick={() => {setFilter('Zoom')}}>Zoom</h2>
+            <h2 className="text-4xl hover:cursor-pointer hover:text-emerald-400 hover:scale-110" onClick={() => {setFilter('Sony')}}>Sony</h2>
+            <h2 className="text-4xl hover:cursor-pointer hover:text-emerald-400 hover:scale-110" onClick={() => {setFilter('Tascam')}}>Tascam</h2>
         </div>
       </div>
     </section>

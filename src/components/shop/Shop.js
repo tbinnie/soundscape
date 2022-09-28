@@ -3,13 +3,13 @@ import Navbar from "../Navbar";
 import ShopGrid from "./ShopGrid";
 import Sidebar from "./Sidebar";
 
-const Shop = () => {
+const Shop = (props) => {
   return (
     <section className="bg-zinc-800 bg-center bg-cover h-full flex flex-col">
-      <Navbar />
+      <Navbar cart={props.cart}/>
       <div className="flex flex-col lg:flex-row">
         <Sidebar />
-        <ShopGrid />
+        <ShopGrid cart={props.cart}/>
       </div>
     </section>
   );

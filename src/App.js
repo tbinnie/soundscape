@@ -1,18 +1,11 @@
-import Landing from "./components/landing/Landing";
-import Shop from "./components/shop/Shop";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import { useState } from "react";
+import Navbar from "./components/Navbar";
+import RouteSwitch from "./components/RouteSwitch";
 
 function App() {
-  return (
-    <div className="App flex flex-col bg-zinc-800">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/shop" element={<Shop />} />
-        </Routes>
-      </BrowserRouter>
-    </div>
-  );
+  const [cart, setCart] = useState([]);
+
+  return <RouteSwitch cart={[cart, setCart]} />;
 }
 
 export default App;
