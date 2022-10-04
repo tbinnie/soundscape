@@ -10,7 +10,7 @@ for (let i = 0; i < names.length; i += 1) {
         name: names[i],
         price: prices[i],
         image: images[i],
-        id: i
+        id: i.toString(),
     })
 }
 

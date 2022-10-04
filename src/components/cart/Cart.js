@@ -20,10 +20,12 @@ const Cart = (props) => {
       <div className="p-12 ml-auto mr-auto flex flex-col gap-16">
         {cart.map((item) => (
           <CartItem
+            cart={props.cart}
             name={item.name}
             price={item.price}
             key={item.id}
             quantity={props.quantity}
+            id={item.id}
           />
         ))}
       </div>

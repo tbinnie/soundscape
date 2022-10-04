@@ -9,18 +9,28 @@ const Item = (props) => {
       <h1 className="text-white text-4xl">{props.name}</h1>
       <h2 className="text-white text-3xl">£{props.price}</h2>
       <button
-        className="bg-white text-xl p-4 border-emerald-400 border-4"
+        className="bg-white text-xl p-4 border-emerald-400 border-4 hover:text-white hover:bg-emerald-400"
         onClick={() => {
-          setCart((prevState) => [
-            ...prevState,
-            {
-              name: props.name,
-              price: props.price,
-              id: props.id,
-              img: props.img,
-              quantity: 1,
-            },
-          ]);
+          if (
+            cart
+              .map((item) => {
+                return item.id;
+              })
+              .includes(props.id) === false
+          ) {
+            setCart((prevState) => [
+              ...prevState,
+              {
+                name: props.name,
+                price: props.price,
+                id: props.id,
+                img: props.img,
+                quantity: 1,
+              },
+            ]);
+          } else {
+            alert('Already in cart')
+          }
         }}
       >
         Add to basket
