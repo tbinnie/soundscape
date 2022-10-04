@@ -4,8 +4,8 @@ import PropTypes from "prop-types";
 const Item = (props) => {
   const [cart, setCart] = props.cart;
   return (
-    <div className=" w-80 h-96 flex flex-col shadow-xl justify-evenly items-center">
-      <img src={props.img} />
+    <div className=" w-80 pb-8 flex flex-col shadow-xl justify-evenly items-center bg-emerald-700 rounded-xl gap-4">
+      <img src={props.img} className="h-auto w-80 rounded-t-xl shadow-lg" />
       <h1 className="text-white text-4xl">{props.name}</h1>
       <h2 className="text-white text-3xl">£{props.price}</h2>
       <button
@@ -29,11 +29,11 @@ const Item = (props) => {
               },
             ]);
           } else {
-            alert('Already in cart')
+            alert("Already in cart");
           }
         }}
       >
-        Add to basket
+        {cart.map(item => item.id).includes(props.id) ? "In cart!" : 'Add to cart'} 
       </button>
     </div>
   );

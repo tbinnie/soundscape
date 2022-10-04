@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import f6 from "../../imgs/mics/F6.png";
 
 const Splash = () => {
   return (

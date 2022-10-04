@@ -33,9 +33,6 @@ const Navbar = (props) => {
           <Link to="/shop">
             <li className="hover:scale-125">Shop</li>
           </Link>
-          <li>
-            <img src={searchIcon} className="h-8 w-auto hover:scale-125" />
-          </li>
           <Link to="/cart">
             <li className="flex justify-center items-center">
               <img
