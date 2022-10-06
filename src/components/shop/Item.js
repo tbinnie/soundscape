@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import PropTypes from "prop-types";
 
 const Item = (props) => {
@@ -18,22 +18,28 @@ const Item = (props) => {
               })
               .includes(props.id) === false
           ) {
-            setCart((prevState) => [
-              ...prevState,
-              {
-                name: props.name,
-                price: props.price,
-                id: props.id,
-                img: props.img,
-                quantity: 1,
-              },
-            ]);
+            setCart((prevState) =>
+              [
+                ...prevState,
+                {
+                  name: props.name,
+                  price: props.price,
+                  id: props.id,
+                  img: props.img,
+                  quantity: 1,
+                },
+              ].sort((a, b) => {
+                return a.id - b.id;
+              })
+            );
           } else {
             alert("Already in cart");
           }
         }}
       >
-        {cart.map(item => item.id).includes(props.id) ? "In cart!" : 'Add to cart'} 
+        {cart.map((item) => item.id).includes(props.id)
+          ? "In cart!"
+          : "Add to cart"}
       </button>
     </div>
   );
